@@ -116,6 +116,8 @@ class Homestead
 
         if (folder["type"] == "nfs")
             mount_opts = folder["mount_opts"] ? folder["mount_opts"] : ['actimeo=1']
+        elsif (folder["type"] == "smb")
+            mount_opts = folder["mount_opts"] ? folder["mount_opts"] : ["dir_mode=0775","file_mode=0774","forceuid","noperm","nobrl","mfsymlinks"]
         end
 
         config.vm.synced_folder folder["map"], folder["to"], type: folder["type"] ||= nil, mount_options: mount_opts
