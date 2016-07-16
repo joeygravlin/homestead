@@ -14,7 +14,7 @@ aliasesPath = confDir + "/aliases"
 
 require File.expand_path(File.dirname(__FILE__) + '/scripts/homestead.rb')
 
-Vagrant.require_version '>= 1.8.4'
+Vagrant.require_version '>= 1.8.1'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if File.exists? aliasesPath then
